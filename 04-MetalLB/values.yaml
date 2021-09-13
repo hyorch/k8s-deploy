@@ -1,6 +1,11 @@
 configInline:
   address-pools:
-   - name: default
+   - name: static_pool
      protocol: layer2
      addresses:
-     - 192.168.100.0/24
+     - 192.168.100.10-192.168.100.15
+
+   - name: dhcp_pool
+     protocol: layer2
+     addresses:
+     - 192.168.100.30-192.168.100.35
