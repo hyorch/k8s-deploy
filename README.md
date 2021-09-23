@@ -11,9 +11,13 @@ ssh-copy-id
 
 ## 2- Kubespray
 
-https://github.com/kubernetes-sigs/kubespray
+<https://github.com/kubernetes-sigs/kubespray>
 
-## 3- Kubectl  
+### 2.1- Kubectl
+
+## 3- Storage
+
+Gluster FS
 
 ## 4- Load Balancer
 
@@ -21,8 +25,10 @@ https://github.com/kubernetes-sigs/kubespray
 
 ## 5- Ingress Controller
 
-https://kubernetes.github.io/ingress-nginx/deploy/#using-helm
+<https://kubernetes.github.io/ingress-nginx/deploy/#using-helm>
 
 ## 6- Monitorización
+
+(Storage needed)
 
 <https://artifacthub.io/packages/helm/prometheus-community/prometheus>
