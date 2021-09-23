@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: prometheus-server
+spec:
+  storageClassName: storage-nfs
+  capacity:
+    storage: 8Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 192.168.100.21
+    path: "/mnt/discoNFS/shared/pv01"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: prometheus-server-pvc
+spec:
+  storageClassName: storage-nfs
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 8Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: prometheus-alertmanager
+spec:
+  storageClassName: storage-nfs
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 192.168.100.21
+    path: "/mnt/discoNFS/shared/pv02"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: prometheus-alertmanager-pvc
+spec:
+  storageClassName: storage-nfs
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 2Gi

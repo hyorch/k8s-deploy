@@ -17,7 +17,9 @@ ssh-copy-id
 
 ## 3- Storage
 
-Gluster FS
+Gluster FS +  Heketi <https://github.com/heketi/heketi>
+
+NFS
 
 ## 4- Load Balancer
 
