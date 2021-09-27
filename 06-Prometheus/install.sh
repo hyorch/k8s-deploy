@@ -5,4 +5,4 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 helm repo add kube-state-metrics https://kubernetes.github.io/kube-state-metrics
 helm repo update
 
-helm install -n prometheus prometheus prometheus-community/prometheus -f values.yaml
+helm install -n prometheus prometheus prometheus-community/kube-prometheus-stack -f values.yaml

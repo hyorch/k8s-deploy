@@ -16,6 +16,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: prometheus-server-pvc
+  namespace: prometheus
 spec:
   storageClassName: storage-nfs
   accessModes:
@@ -42,6 +43,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: prometheus-alertmanager-pvc
+  namespace: prometheus
 spec:
   storageClassName: storage-nfs
   accessModes:
