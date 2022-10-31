@@ -18,9 +18,14 @@ kind: Ingress
 metadata:
   name: guestbook-ingress
   namespace: guestbook
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"    
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
 spec:
   rules:
-  - host: guestbook-test.s2grupo.es
+  - host: test.s2grupo.es
     http:
       paths:
       - path: /
@@ -29,5 +34,9 @@ spec:
           service:
             name: guestbook-ui-svc
             port:
-              number: 80
+              name: http
+  tls:
+  - hosts:
+    - test.s2grupo.es
+    secretName: cert-test
   ingressClassName: nginx
