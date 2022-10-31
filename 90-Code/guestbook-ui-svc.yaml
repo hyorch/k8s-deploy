@@ -12,8 +12,6 @@ spec:
     app: guestbook-ui
   externalIPs:
     - 192.168.7.211
-
-
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -31,5 +29,5 @@ spec:
           service:
             name: guestbook-ui-svc
             port:
-              name: http  
+              number: 80  
   ingressClassName: nginx
