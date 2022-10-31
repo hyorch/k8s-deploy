@@ -17,12 +17,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: guestbook-ingress
-  namespace: guestbook
-  annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"    
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+  namespace: guestbook 
 spec:
   rules:
   - host: test.s2grupo.es
