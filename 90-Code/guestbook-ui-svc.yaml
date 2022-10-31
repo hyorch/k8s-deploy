@@ -1,10 +1,31 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
-  name: guestbook-ui
+  name: guestbook-ui-svc
 spec:
   ports:
   - port: 80
     targetPort: 80
   selector:
     app: guestbook-ui
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: guestbook-ingress
+  namespace: guestbook  
+spec:
+  rules:
+  - host: guestbook-test.s2grupo.es
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: guestbook-ui-svc
+            port:
+              name: http  
+  ingressClassName: nginx
