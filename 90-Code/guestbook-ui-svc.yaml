@@ -17,20 +17,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: guestbook-ingress
-  namespace: guestbook  
-  annotations:    
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"    
+  namespace: guestbook
 spec:
   rules:
   - host: guestbook-test.s2grupo.es
     http:
       paths:
-      - path: /guestbook
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: guestbook-ui-svc
             port:
-              number: 80  
+              number: 80
   ingressClassName: nginx
