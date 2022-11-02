@@ -18,9 +18,11 @@ kind: Ingress
 metadata:
   name: guestbook-ingress
   namespace: guestbook 
+  annotations:    
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   rules:
-  - host: test.s2grupo.es
+  - host: guestbook.s2grupo.es
     http:
       paths:
       - path: /
@@ -32,6 +34,6 @@ spec:
               name: http
   tls:
   - hosts:
-    - test.s2grupo.es
-    secretName: cert-test
+    - guestbook.s2grupo.es
+    secretName: cert-guestbook
   ingressClassName: nginx
